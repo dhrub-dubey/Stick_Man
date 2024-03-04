@@ -167,7 +167,7 @@ window.addEventListener("touchstart", function (event) {
   }
 });
 
-window.addEventListener("touchend", function (event) {
+window.addEventListener("touchcancel", function (event){
   if (phase == "stretching") {
     phase = "turning";
   }
