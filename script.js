@@ -1,4 +1,14 @@
+/*
 
+
+
+If you want to know how this game was made, check out this video, that explains how it's made: 
+
+https://youtu.be/eue3UdFvwPo
+
+Follow me on twitter for more: https://twitter.com/HunorBorbely
+
+*/
 
 // Extend the base functionality of JavaScript
 Array.prototype.last = function () {
@@ -150,7 +160,7 @@ function generatePlatform() {
 resetGame();
 
 // If space was pressed restart the game
-window.addEventListener("click", function (event) {
+window.addEventListener("keydown", function (event) {
   if (event.key == " ") {
     event.preventDefault();
     resetGame();
@@ -158,7 +168,7 @@ window.addEventListener("click", function (event) {
   }
 });
 
-window.addEventListener("touchstart", function (event) {
+window.addEventListener("mousedown", function (event) {
   if (phase == "waiting") {
     lastTimestamp = undefined;
     introductionElement.style.opacity = 0;
@@ -167,7 +177,7 @@ window.addEventListener("touchstart", function (event) {
   }
 });
 
-window.addEventListener("touchcancel", function (event){
+window.addEventListener("mouseup", function (event) {
   if (phase == "stretching") {
     phase = "turning";
   }
